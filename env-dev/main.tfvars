@@ -20,4 +20,7 @@ vpc = {
   }
 }
 
+engagement_vpc = {
+  vpc_id = "vpc-0aa9e93d9aea8a408"
+}
 env = "dev"
