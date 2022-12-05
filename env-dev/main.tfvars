@@ -21,7 +21,8 @@ vpc = {
 }
 
 management_vpc = {
-  vpc_id = "vpc-0aa9e93d9aea8a408"
-  route_table = "rtb-02f3f9a8e79a6c925"
+  vpc_id       = "vpc-0aa9e93d9aea8a408"
+  route_table  = "rtb-02f3f9a8e79a6c925"
+  vpc_cidr     = "172.31.0.0/16"
 }
 env = "dev"
