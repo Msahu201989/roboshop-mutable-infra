@@ -11,6 +11,6 @@ module "vpc" {
 #  env            = var.env
 # subnets = lookup(local.subnets, "database", null )
 
-#output "merged" {
-#  value = merge()
-#}
+output "apps_private_subnets" {
+  value = module.vpc.private_subnets
+}
