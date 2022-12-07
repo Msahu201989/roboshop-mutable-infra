@@ -1,27 +1,27 @@
 vpc = {
-  vpc1 = {
+  vpc2 = {
     cidr_block = "10.0.0.0/16"
     additional_cidr_block = []
     private_subnets = {
       frontend = {
-        cidr_block = ["10.0.0.0/24", "10.0.1.0/24"]
+        cidr_block = ["10.1.0.0/24", "10.1.1.0/24"]
         name       = "frontend"
         attach_to  = "ngw"
       }
       database = {
-        cidr_block = ["10.0.2.0/24", "10.0.3.0/24"]
+        cidr_block = ["10.1.2.0/24", "10.1.3.0/24"]
         name       = "database"
         attach_to  = "ngw"
       }
       app = {
-        cidr_block = ["10.0.4.0/24", "10.0.5.0/24"]
+        cidr_block = ["10.1.4.0/24", "10.1.5.0/24"]
         name       = "app"
         attach_to  = "ngw"
       }
     }
     public_subnets  = {
       public = {
-        cidr_block = ["10.0.255.0/24", "10.0.254.0/24"]
+        cidr_block = ["10.1.255.0/24", "10.1.254.0/24"]
         name       = "public"
         attach_to  = "igw"
       }
