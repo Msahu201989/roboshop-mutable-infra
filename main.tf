@@ -11,6 +11,3 @@ module "vpc" {
 #  env            = var.env
 # subnets = lookup(local.subnets, "database", null )
 
-output "app_private_subnets" {
-  value = local.private_subnets[*].id
-}
