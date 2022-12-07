@@ -12,5 +12,5 @@ module "vpc" {
 # subnets = lookup(local.subnets, "database", null )
 
 output "private_subnets" {
-  value = {for k, v in module.vpc.private_subnets : k => v.subnets}
+  value = local.private_subnets
 }
