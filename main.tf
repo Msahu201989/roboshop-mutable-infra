@@ -4,10 +4,11 @@ module "vpc" {
   env    = var.env
   management_vpc = var.management_vpc
 }
-#
-#module "docdb" {
-#  source         = "./vendor/modules/docdb"
-#  docdb          = var.docdb
-#  env            = var.env
-# subnets = lookup(local.subnets, "database", null )
+
+module "docdb" {
+  source  = "./vendor/modules/docdb"
+  docdb   = var.docdb
+  env     = var.env
+  subnets = local.database_private_subnets[*].id
+}
 
