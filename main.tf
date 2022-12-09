@@ -24,3 +24,7 @@ module "vpc" {
 #  env    = var.env
 #  subnets = local.database_private_subnets[*].id
 #}
+
+output "app_subnets" {
+  value = module.vpc.private_subnets
+}
