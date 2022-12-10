@@ -17,14 +17,14 @@ module "docdb" {
   name                 =  each.key
   engine               = each.value.engine
   env                  = var.env
-  subnets              = flatten([for i, j in module.vpc : j.private_subnets["database"]["subnets"][*].id])
+  subnets             = flatten([for i, j in module.vpc : j.private_subnets["database"]["subnets"][*].id])
 }
 
 module "rds" {
   source               = "./vendor/modules/rds"
   for_each             = var.rds
   env                  = var.env
-  subnets              = flatten([for i, j in module.vpc : j.private_subnets["database"]["subnets"][*].id])
+  subnets             = flatten([for i, j in module.vpc : j.private_subnets["database"]["subnets"][*].id])
   name                = each.key
   allocated_storage   = each.value.allocated_storage
   engine              = each.value.engine
