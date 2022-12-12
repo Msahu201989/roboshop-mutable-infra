@@ -70,12 +70,13 @@ module "apps" {
   max_size             = each.value.max_size
   vpc_id               = element([for i, j in module.vpc : j.vpc_id ], 0)
   BASTION_NODE         = var.BASTION_NODE
+  app_port_no          = each.value.port_no
 #  lb_listener_priority = each.value.lb_listener_priority
 #  type                 = each.value.type
 #  vpc_id               = element([for i, j in module.vpc : j.vpc_id], 0)
 #  app_port_no          = each.value.app_port_no
 #  PROMETHEUS_NODE      = var.PROMETHEUS_NODE
-#  vpc_cidr             = element([for i, j in module.vpc : j.vpc_cidr], 0)
+  vpc_cidr             = element([for i, j in module.vpc : j.vpc_cidr], 0)
 #  alb                  = module.alb
 #  private_zone_id      = var.private_zone_id
 #  public_dns_name      = try(each.value.public_dns_name, null)
