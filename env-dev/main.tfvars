@@ -111,7 +111,6 @@ apps = {
     app_port_no      = 8080
     lb_listener_priority = 104
     type               = "backend"
-
   }
   frontend = {
     instance_type    = "t3.micro"
@@ -120,11 +119,13 @@ apps = {
     app_port_no      = 80
     type               = "frontend"
     lb_listener_priority = 100
+    public_dns_name     = "dev"
   }
 }
 
 BASTION_NODE = "172.31.88.133/32"
 private_zone_id = "Z08794052HXPQY7AFUVKG"
+public_zone_id  = "Z00328002YWJIOD14P0G"
 
 alb = {
   public = {
