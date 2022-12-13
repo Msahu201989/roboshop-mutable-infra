@@ -119,7 +119,7 @@ apps = {
     min_size         = 1
     app_port_no      = 80
     type               = "frontend"
-    lb_listener_priority = 0
+    lb_listener_priority = 100
   }
 }
 
