@@ -39,9 +39,15 @@ management_vpc = {
   vpc_cidr     = "172.31.0.0/16"
 }
 
-docdb ={
-  db1 ={
-    engine = "docdb"
+docdb = {
+  db1 = {
+    engine              = "docdb"
+    skip_final_snapshot = true
+    nodes               = {
+      one = {
+        Instance_class = "db.t3.medium"
+      }
+    }
   }
 }
 
@@ -49,12 +55,9 @@ rds = {
   db1 = {
     allocated_storage    = 10
     engine               = "aurora-mysql"
+    engine_version       = "5.7.mysql_aurora.2.10.2"
+    instance_class       = "db.t3.micro"
     skip_final_snapshot  = true
-    nodes = {
-      one = {
-        Instance_class = "db.t3.medium"
-      }
-    }
   }
 }
 
