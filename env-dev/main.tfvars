@@ -45,7 +45,7 @@ docdb = {
     skip_final_snapshot = true
     nodes               = {
       one = {
-        Instance_class = "db.t3.medium"
+        instance_class = "db.t3.medium"
       }
     }
   }
